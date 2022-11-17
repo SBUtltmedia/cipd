@@ -1,0 +1,564 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+input {
+    padding: 0;
+}
+
+#stage {
+    position: absolute;
+    background-color: #ffffff;
+}
+
+#blocker {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    z-index: 10000;
+}
+
+.screenBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+
+#titleText {
+    width: 90%;
+    left: 5%;
+    top: 2.5%;
+    position: absolute;
+    text-align: center;
+    color: #000;
+    font-family: "FuturaDemi";
+    font-size: 1.5rem;
+}
+
+.titleInputBox {
+    width: 80%;
+    height: 15%;
+    left: 10%;
+    position: absolute;
+    background-color: #e0e0e0;
+}
+
+#nameInputBox {
+    top: 32.5%;
+}
+
+#codeInputBox {
+    top: 57.5%;
+}
+
+.titleInputLabel {
+    width: 100%;
+    left: 0%;
+    top: -37%;
+    position: absolute;
+    text-align: left;
+    color: #e0e0e0;
+    font-family: "FuturaDemi";
+    font-size: 1rem;
+}
+
+.titleInputInput {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 0px;
+    background: none;
+    font-size: 2rem;
+    font-family: "FuturaDemi";
+    text-align: center;
+}
+
+#titleOKButton {
+    width: 50%;
+    height: 15%;
+    left: 25%;
+    top: 80%;
+    position: absolute;
+    background-color: #404040;
+}
+
+#titleOKText {
+    font-family: "FuturaDemi";
+    font-size: 2rem;
+    left: 0%;
+    width: 100%;
+    top: 7.5%;
+    position: absolute;
+    color: #d0d0d0;
+    text-align: center;
+}
+
+#titleSubmittedBox {
+    pointer-events: none;
+    opacity: 0;
+}
+
+#titleConnectedText {
+    font-family: "FuturaDemi";
+    font-size: 1.5rem;
+    left: 0%;
+    width: 100%;
+    top: 80%;
+    position: absolute;
+    color: #2cb674;
+    text-align: center;
+}
+
+#titleWaitingText {
+    font-family: "FuturaDemi";
+    font-size: .75rem;
+    left: 0%;
+    width: 100%;
+    top: 87.5%;
+    position: absolute;
+    color: #808080;
+    text-align: center;
+}
+
+#surveyBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#surveyHeader {
+    width: 90%;
+    height: 15%;
+    left: 5%;
+    top: 5%;
+    position: absolute;
+    background-color: #f8f8f8;
+}
+
+#surveyHeaderText {
+    font-family: "FuturaHeavy";
+    font-size: 1rem;
+    left: 0%;
+    width: 100%;
+    top: 0%;
+    position: absolute;
+    color: #808080;
+    text-align: center;
+}
+
+.surveyHeaderBubble {
+    width: 11.1111%;
+    height: 50%;
+    left: 50%;
+    top: 45%;
+    position: absolute;
+    background-color: #444;
+    border-radius: 50%;
+    z-index: 20;
+    transform: scale(.5);
+}
+
+@keyframes headerBubbleIn {
+    from {
+        transform: scale(.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.anim_headerBubbleIn {
+    animation: headerBubbleIn .25s 0s normal forwards;
+}
+
+@keyframes headerBubbleOut {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.5);
+    }
+}
+
+.anim_headerBubbleOut {
+    animation: headerBubbleOut .25s 0s normal forwards;
+}
+
+.surveyHeaderBubbleText {
+    font-family: "FuturaDemi";
+    font-size: 1rem;
+    left: 0%;
+    width: 100%;
+    top: 8%;
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+}
+
+#surveyHeaderLine {
+    width: 80%;
+    height: 7%;
+    left: 10%;
+    top: 66.5%;
+    position: absolute;
+    background-color: #444;
+}
+
+#surveyTextBox {
+    width: 90%;
+    height: 30%;
+    left: 5%;
+    top: 25%;
+    position: absolute;
+    background-color: #444;
+}
+
+#surveyQuestionText {
+    font-family: "FuturaDemi";
+    font-size: 1rem;
+    left: 5%;
+    width: 90%;
+    top: 8%;
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+}
+
+#surveySliderBox {
+    width: 90%;
+    height: 20%;
+    left: 5%;
+    top: 60%;
+    position: absolute;
+    background-color: #f8f8f8;
+}
+
+#surveySlider {
+    width: 15%;
+    height: 50%;
+    left: 42.5%;
+    top: 10%;
+    position: absolute;
+    z-index: 20;
+}
+
+#surveySliderBubble {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../resources/img/bubble.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    z-index: 30;
+}
+
+#surveySliderText {
+    font-family: "FuturaDemi";
+    font-size: .9rem;
+    left: 0%;
+    width: 100%;
+    top: 14%;
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+}
+
+#surveySliderBar {
+    width: 85%;
+    height: 5%;
+    left: 7.5%;
+    top: 60%;
+    position: absolute;
+    background-color: #c0c0c0;
+}
+
+#surveySliderFill {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: #444;
+}
+
+.surveyChoiceText {
+    font-family: "FuturaHeavy";
+    font-size: .75rem;
+    left: 2.5%;
+    width: 95%;
+    top: 69%;
+    position: absolute;
+    color: #444;
+}
+
+#surveyChoiceTextLeft {
+    text-align: left;
+}
+
+#surveyChoiceTextRight {
+    text-align: right;
+}
+
+#surveyOKButton {
+    width: 50%;
+    height: 10%;
+    left: 25%;
+    top: 85%;
+    position: absolute;
+    background-color: #444;
+}
+
+#surveyOKButtonText {
+    font-family: "FuturaDemi";
+    font-size: 1.25rem;
+    left: 0%;
+    width: 100%;
+    top: 12%;
+    position: absolute;
+    color: #c0c0c0;
+    text-align: center;
+}
+
+#profileBox {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    background-color: white;
+    z-index: 1000;
+    visibility: hidden;
+}
+
+#profileHeaderText {
+    font-family: "FuturaDemi";
+    font-size: 1.75em;
+    left: 0%;
+    width: 100%;
+    top: 1.75%;
+    position: absolute;
+    color: #404040;
+    text-align: center;
+}
+
+.profileStatBox {
+    width: 90%;
+    height: 20%;
+    left: 5%;
+    position: absolute;
+    background-color: #f8f8f8;
+}
+
+.profileStatTitle {
+    font-family: "FuturaDemi";
+    font-size: 1em;
+    left: 2.5%;
+    width: 95%;
+    top: 1%;
+    position: absolute;
+    color: #404040;
+    text-align: left;
+}
+
+.profileStatSlider {
+    width: 15%;
+    height: 50%;
+    left: 0%;
+    top: 35%;
+    position: absolute;
+    z-index: 20;
+}
+
+.profileSliderBubble {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../resources/img/bubble.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    z-index: 30;
+}
+
+.profileSliderText {
+    font-family: "FuturaDemi";
+    font-size: .9rem;
+    left: 0%;
+    width: 100%;
+    top: 14%;
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+}
+
+.profileSliderBar {
+    width: 85%;
+    height: 5%;
+    left: 7.5%;
+    top: 85%;
+    position: absolute;
+    background-color: #c0c0c0;
+}
+
+.profileSliderFill {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    background-color: #444;
+}
+
+#profileWaitingText {
+    font-family: "FuturaDemi";
+    font-size: .75rem;
+    left: 0%;
+    width: 100%;
+    top: 90%;
+    position: absolute;
+    color: #808080;
+    text-align: center;
+}
+
+#simScreen {
+    
+}
+
+#simGrid {
+    width: 80%;
+    height: 60%;
+    left: 10%;
+    top: 7.5%;
+    position: absolute;
+    background-color: #f8f8f8;
+}
+
+.cell {
+    width: 2.1%;
+    height: 2.1%;
+    position: absolute;
+    background-color: #ffffff;
+}
+
+#simScore {
+    width: 80%;
+    height: 15%;
+    left: 10%;
+    top: 75%;
+    position: absolute;
+    background-color: #808080;
+}
+
+#simScoreColor {
+    width: 20%;
+    height: 80%;
+    left: 2.5%;
+    top: 10%;
+    position: absolute;
+    background-color: blue;
+}
+
+#simScoreName {
+    font-family: "FuturaDemi";
+    font-size: 1.08rem;
+    width: 65%;
+    top: 7%;
+    left: 25%;
+    position: absolute;
+    color: #ffffff;
+    text-align: left;
+}
+
+#simScoreProfile {
+    font-family: "FuturaDemi";
+    font-size: .72rem;
+    width: 65%;
+    top: 55%;
+    left: 25%;
+    position: absolute;
+    color: #ffffff;
+    text-align: left;
+}
+
+#simScoreCountBox {
+    width: 25%;
+    height: 100%;
+    left: 75%;
+    position: absolute;
+    background-color: #f8f8f8;
+}
+
+#simScoreCount {
+    font-family: "FuturaDemi";
+    font-size: 1.1rem;
+    width: 100%;
+    top: 17%;
+    left: 0%;
+    position: absolute;
+    color: #808080;
+    text-align: center;
+}
+
+#simScoreCountLabel {
+    font-family: "FuturaDemi";
+    font-size: .5rem;
+    width: 100%;
+    top: 58%;
+    left: 0%;
+    position: absolute;
+    color: #808080;
+    text-align: center;
+}
+
+#resultsWinText {
+    font-family: "FuturaDemi";
+    font-size: 3rem;
+    width: 100%;
+    top: 37.5%;
+    left: 0%;
+    position: absolute;
+    color: #808080;
+    text-align: center;
+}
+
+#resultsWinSubtext {
+    font-family: "FuturaDemi";
+    font-size: 1rem;
+    width: 100%;
+    top: 53.5%;
+    left: 0%;
+    position: absolute;
+    color: #808080;
+    text-align: center;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.anim_fadeOut {
+    animation: fadeOut .25s 0s normal forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.anim_fadeIn {
+    animation: fadeIn .25s 0s normal forwards;
+}

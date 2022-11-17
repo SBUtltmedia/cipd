@@ -1,15 +1,17 @@
-var app = require('express')();
-var http = require('http').Server(app);
-
-var io = require('socket.io')(http);
+import express from 'express';
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 var state = {
     "rooms": []
 };
-
-app.get('/', function (req, res) {
-    //res.sendFile(__dirname + '/index.html');
-});
+app.use(express.static('public'))
+// app.get('/', function (req, res) {
+//     //res.sendFile(__dirname + '/index.html');
+// });
 
 io.on('connection', function (socket) {
     // Login: check if room exists (host)
@@ -194,9 +196,10 @@ io.on('connection', function (socket) {
 
     });
 });
-
-http.listen(8080, function () {
-    console.log('listening on *:8080');
+// Gets environment variables from Heroku. Otherwise, get them locally from the config file.
+const PORT = process.env.PORT || 8080
+http.listen(PORT, function () {
+    console.log(`listening on *:${PORT}`);
 });
 
 function createRoom(code) {

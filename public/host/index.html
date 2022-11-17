@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CIPD Host</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script src="js/resize.js"></script>
+    <script src="../resources/js/shared.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../resources/css/shared.css">
+</head>
+
+<body>
+    <div id="stage" class="screen">
+        <div id="titleScreen" class="screenBox display-prep">
+            <div id="titleText" class="text">Continuous Iterated Prisoner's Dilemma</div>
+            <div id="roomInfo">
+                <div id="roomCodeLabel">ROOM CODE</div>
+                <div id="roomCodeBox">
+                    <div id="roomCodeText"></div>
+                </div>
+                <div id="roomCodeDivider"></div>
+                <div id="roomResetButton">
+                    <div id="roomResetText">RESET</div>
+                </div>
+                <div id="roomStartButton">
+                    <div id="roomStartText">START</div>
+                </div>
+                <div id="addAIButton">
+                <div id="addAIButtonText">ADD CPU</div>
+            </div>
+            </div>
+            <div id="titlePlayerList"></div>
+        </div>
+        <div id="surveyScreen" class="screenBox display-survey">
+            <div id="surveyHeaderText" class="text">SURVEY IN PROGRESS</div>
+            <div id="surveyProgress">
+                <div id="surveyProgressBoxes"></div>
+            </div>
+            <div id="surveyContinueText">CLICK TO CONTINUE</div>
+        </div>
+        <div id="simScreen" class="screenBox display-sim">
+            <div id="simGrid"></div>
+            <div id="simScores"></div>
+            <div id="simIterations">ITERATION 0</div>
+            <div id="simLabel">CLICK TO ADVANCE SIMULATION</div>
+            <div id="simAutoBox">
+                <div id="simAutoCheckbox"></div>
+                <div id="simAutoText">AUTO-ADVANCE</div>
+            </div>
+            <div id="simExit"></div>
+            <div id="simExitText">END SIMULATION</div>
+        </div>
+        <div id="resultsScreen" class="screenBox display-results">
+            <div id="resultsTitleText">STABILIZED</div>
+            <div id="resultsInfo">
+                <div id="resultsWinnerLabel">WINNER!</div>
+                <div id="resultsWinnerName"></div>
+                <div id="resultsWinnerProfile"></div>
+                <div id="resultsIterations"></div>
+            </div>
+            <div id="resultsMenuButton">
+                <div id="resultsMenuButtonText">RETURN TO MENU</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

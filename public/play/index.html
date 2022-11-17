@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CIPD Client</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="js/resize.js"></script>
+    <script src="../resources/js/shared.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../resources/css/shared.css">
+</head>
+
+<body>
+    <div id="stage" class="screen">
+        <div id="blocker"></div>
+        <div id="titleScreen" class="screenBox display-prep">
+            <div id="titleText" class="text">Continuous Iterated Prisoner's Dilemma</div>
+            <div id="nameInputBox" class="titleInputBox">
+                <div id="nameInputLabel" class="titleInputLabel">INPUT NAME</div>
+                <input id="nameInputInput" class="titleInputInput">
+            </div>
+            <div id="codeInputBox" class="titleInputBox">
+                <div id="codeInputLabel" class="titleInputLabel">INPUT ROOM CODE</div>
+                <input id="codeInputInput" class="titleInputInput">
+            </div>
+            <div id="titleOKButton">
+                <div id="titleOKText">Submit</div>
+            </div>
+            <div id="titleSubmittedBox">
+                <div id="titleConnectedText">CONNECTED</div>
+                <div id="titleWaitingText">WAITING FOR HOST</div>
+            </div>
+        </div>
+        <div id="surveyScreen" class="screenBox display-survey">
+            <div id="surveyBox">
+                <div id="surveyHeader">
+                    <div id="surveyHeaderText"></div>
+                    <div id="surveyHeaderLine"></div>
+                </div>
+                <div id="surveyTextBox">
+                    <div id="surveyQuestionText"></div>
+                </div>
+                <div id="surveySliderBox">
+                    <div id="surveySlider">
+                        <div id="surveySliderBubble">
+                            <div id="surveySliderText"></div>
+                        </div>
+                    </div>
+                    <div id="surveySliderBar">
+                        <div id="surveySliderFill"></div>
+                    </div>
+                    <div id="surveyChoiceTextLeft" class="surveyChoiceText"></div>
+                    <div id="surveyChoiceTextRight" class="surveyChoiceText"></div>
+                </div>
+                <div id="surveyOKButton">
+                    <div id="surveyOKButtonText">CONTINUE</div>
+                </div>
+            </div>
+            <div id="profileBox">
+                <div id="profileHeaderText">YOUR PROFILE</div>
+                <div id="profileWaitingText">WAITING FOR HOST</div>
+            </div>
+        </div>
+        <div id="simScreen" class="screenBox display-sim">
+            <div id="simGrid"></div>
+            <div id="simScore">
+                <div id="simScoreColor"></div>
+                <div id="simScoreName"></div>
+                <div id="simScoreProfile"></div>
+                <div id="simScoreCountBox">
+                    <div id="simScoreCount"></div>
+                    <div id="simScoreCountLabel">CELLS LEFT</div>
+                </div>
+            </div>
+        </div>
+        <div id="resultsScreen" class="screenBox display-results">
+            <div id="resultsWinText"></div>
+            <div id="resultsWinSubtext"></div>
+        </div>
+    </div>
+</body>
+
+</html>

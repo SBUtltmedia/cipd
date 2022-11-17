@@ -1,9 +1,14 @@
 {
+  "scripts": {
+    "start": "npx nodemon index.js"
+  },
   "name": "cipd_server",
   "version": "0.0.1",
+  "type": "module",
   "description": "server for continuous iterated prisoner's dilemma",
   "dependencies": {
     "express": "^4.10.2",
+    "nodemon": "^2.0.20",
     "socket.io": "^1.7.2"
   }
 }

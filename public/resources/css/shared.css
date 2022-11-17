@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "FuturaBook";
+    src: url("../fonts/FuturaPTBook.otf");
+}
+
+@font-face {
+    font-family: "FuturaMedium";
+    src: url("../fonts/FuturaPTMedium.otf");
+}
+
+@font-face {
+    font-family: "FuturaDemi";
+    src: url("../fonts/FuturaPTDemi.otf");
+}
+
+
+@font-face {
+    font-family: "FuturaBold";
+    src: url("../fonts/FuturaPTBold.otf");
+}
+
+
+@font-face {
+    font-family: "FuturaHeavy";
+    src: url("../fonts/FuturaPTHeavy.otf");
+}
