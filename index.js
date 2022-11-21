@@ -76,10 +76,12 @@ io.on('connection', function (socket) {
         }
     });
     // Add new AI player
-    socket.on('add-random-player', function (roomCode) {
+    socket.on('add-CPU-player', function (roomData) {
+        let roomCode=roomData.roomCode
+        console.log(roomCode)
         var room = getRoom(roomCode);
         if (room != null) {
-            addRandomPlayer(room);
+            addCPUPlayer(roomData);
             io.sockets.emit('update-room-members', roomCode);
             io.sockets.emit("state-update-available", roomCode);
         }
@@ -215,18 +217,26 @@ function createRoom(code) {
     return newRoom;
 }
 
-function addRandomPlayer(room) {
+function addCPUPlayer(roomData) {
+
     var adj = ["Fast", "Slow", "Tall", "Short", "Nice", "Mean"];
     var noun = ["Cat", "Dog", "Bunny", "Meme"];
     var num = Math.floor(Math.random() * 90) + 10;
-    var name = randomItem(adj) + randomItem(noun) + num;
-    var p = addPlayer(room, name);
+    var name = roomData.name || randomItem(adj) + randomItem(noun) + num;
+    console.log(roomData.roomCode, name)
+    var p = addPlayer(getRoom(roomData.roomCode), name);
     for (var i = 0; i < 6; i++) {
         p.answers.push(Math.floor(101 * Math.random()));
     }
+    let response=[];
     for (var i = 0; i < 3; i++) {
-        p.profile[i] = Math.round((p.answers[i] + p.answers[i + 3]) / 2);
+
+        response[i]=  Math.round((p.answers[i] + p.answers[i + 3]) / 2);
+      
+       
     }
+    p.profile = roomData.strat || response;
+
 }
 
 function deleteRoom(code) {

@@ -204,7 +204,7 @@ class EcpkParameters(univ.Choice):
 
 
 id_publicKeyType = _OID(ansi_X9_62, 2)
-id_ecPublicKey = _OID(id_publicKeyType, 1)
+id_eblicKey = _OID(id_publicKeyType, 1)
 
 ellipticCurve = _OID(ansi_X9_62, 3)
 

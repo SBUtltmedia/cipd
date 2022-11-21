@@ -47,6 +47,7 @@ function getPayoff(x, y) {
 
 // Get the average payoffs of two strategies after some number of rounds
 function getRepeatedPayoff(s1, s2, rounds) {
+    console.log(s1, s2)
     var payoffs = [0, 0];
     var last1 = 0;
     var last2 = 0;

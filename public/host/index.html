@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CIPD Host</title>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="js/resize.js"></script>
     <script src="../resources/js/shared.js"></script>
@@ -20,18 +21,22 @@
             <div id="roomInfo">
                 <div id="roomCodeLabel">ROOM CODE</div>
                 <div id="roomCodeBox">
-                    <div id="roomCodeText"></div>
+                    <div id="roomCodeText" ></div>
                 </div>
                 <div id="roomCodeDivider"></div>
-                <div id="roomResetButton">
-                    <div id="roomResetText">RESET</div>
+                <div id="roomResetButton" class="buttonStyle" >
+                    <div id="roomResetText" class="buttonLabel">RESET</div>
                 </div>
-                <div id="roomStartButton">
-                    <div id="roomStartText">START</div>
+                <div id="roomStartButton" class="buttonStyle">
+                    <div id="roomStartText" class="buttonLabel">START</div>
                 </div>
-                <div id="addAIButton">
-                <div id="addAIButtonText">ADD CPU</div>
-            </div>
+                <div id="addAIButton" class="buttonStyle">
+                    <div id="addAIButtonText" class="buttonLabel">ADD CPU</div>
+                </div>
+                <div id="addBasicButton" class="buttonStyle">
+                    <div id="addBasicText" class="buttonLabel">ADD 8 BASIC</div>
+                </div>
+
             </div>
             <div id="titlePlayerList"></div>
         </div>

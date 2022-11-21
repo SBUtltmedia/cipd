@@ -86,8 +86,20 @@ $(function () {
     $("#addAIButton").click(function() {
         console.log(roomState);
         console.log("add random player", roomState.code);
-        socket.emit("add-random-player", roomState.code);
+        socket.emit("add-CPU-player", {"roomCode":roomState.code});
     });
+    $("#addBasicButton").click(function() {
+        console.log(roomState);
+
+        [...Array(8).keys()].forEach(i=>{
+        var binString= Number(i+8).toString(2).slice(1);
+        var binArray=binString.split("").map(i=>i*100);
+        console.log("add random player", roomState.code);
+        console.log(binString,binArray)
+        socket.emit("add-CPU-player", {"roomCode":roomState.code,"strat":binArray,"name": binString});
+    })
+    });
+
     $("#roomResetButton").click(function () {
         // Reset room
         resetRoom();

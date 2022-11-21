@@ -1,3 +1,6 @@
+:root {
+    --buttonVspace:14%;
+  }
 body {
     margin: 0;
     padding: 0;
@@ -79,55 +82,38 @@ body {
 }
 
 #roomResetButton {
-    width: 70%;
-    height: 10%;
+  
     left: 15%;
-    top: 50%;
-    position: absolute;
-    background-color: #808080;
-}
+    top:calc(45% + var(--buttonVspace) *0);
 
-#roomResetText {
-    font-family: "FuturaHeavy";
-    font-size: .75rem;
-    left: 0%;
-    width: 100%;
-    top: 11%;
-    position: absolute;
-    color: #d0d0d0;
-    text-align: center;
-}
-
-#roomStartButton {
-    width: 70%;
-    height: 10%;
-    left: 15%;
-    top: 80%;
-    position: absolute;
-    background-color: #808080;
-}
-
-#roomStartText {
-    font-family: "FuturaHeavy";
-    font-size: .75rem;
-    left: 0%;
-    width: 100%;
-    top: 11%;
-    position: absolute;
-    color: #d0d0d0;
-    text-align: center;
 }
 
 #addAIButton {
+
+    left: 15%;
+    top:calc(45% + var(--buttonVspace) *1);
+
+}
+#roomStartButton {
+    left: 15%;
+    top:calc(45% + var(--buttonVspace) *2);
+}
+
+
+#addBasicButton {
+
+    left: 15%;
+    top:calc(45% + var(--buttonVspace) *3);
+
+}
+.buttonStyle {
     width: 70%;
     height: 10%;
-    left: 15%;
-    top: 65%;
     position: absolute;
     background-color: #808080;
 }
 
-#addAIButtonText {
+.buttonLabel {
     font-family: "FuturaHeavy";
     font-size: .75rem;
     left: 0%;
@@ -137,6 +123,9 @@ body {
     color: #d0d0d0;
     text-align: center;
 }
+
+
+
 
 #titlePlayerList {
     width: 30%;
