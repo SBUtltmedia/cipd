@@ -182,7 +182,7 @@ body {
     top: 17.5%;
     position: absolute;
     background-color: #fbfbfb;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 #surveyProgressBoxes {
